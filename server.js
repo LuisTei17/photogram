@@ -7,7 +7,7 @@ const consign = require('consign');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:2018/technoblog');
+mongoose.connect('mongodb://localhost:27017/photogram');
 
 app.use(cors())
 
@@ -17,8 +17,10 @@ app.use(require('method-override')());
 
 app.use(morgan('dev'));
 
-consign({cwd:'server/app'})
-    .include('components')
+consign({cwd:'app'})
+    .include('models')
+    .then('controllers')
+    .then('routes')
     .into(app)
 
 app.set('port', (process.env.PORT || 4030));
