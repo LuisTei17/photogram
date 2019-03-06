@@ -3,12 +3,14 @@ const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
+const fileUpload = require('express-fileupload');
 const consign = require('consign');
 
 const app = express();
 
 mongoose.connect('mongodb://localhost:27017/photogram');
 
+app.use(fileUpload());
 app.use(cors())
 
 app.use(bodyParser.json());

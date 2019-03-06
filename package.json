@@ -13,9 +13,10 @@
     "consign": "*",
     "cors": "*",
     "express": "*",
+    "express-fileupload": "^1.1.1-alpha.3",
     "method-override": "*",
-    "mongoose": "*",
     "mongodb": "*",
+    "mongoose": "*",
     "morgan": "*"
   }
 }
